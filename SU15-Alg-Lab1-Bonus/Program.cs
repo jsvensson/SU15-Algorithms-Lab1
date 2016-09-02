@@ -14,7 +14,21 @@ namespace SU15_Alg_Lab1_Bonus
             //Console.WriteLine(string.Join(",", fib));
 
 
-            Problem5.Permutations();
+            IEnumerable<IEnumerable<int>> set = Problem5.FindPermutations();
+            Console.WriteLine($"{set.Count()} permutations");
+            Console.WriteLine();
+
+            foreach (IEnumerable<int> permutation in set)
+            {
+                Console.WriteLine($"{{ {string.Join(", ", permutation)} }}");
+
+
+                //if (permutation.Sum() == 100)
+                //{
+                //    Console.WriteLine($"{{ {string.Join(", ", permutation)} }}");
+                //}
+
+            }
 
         }
 

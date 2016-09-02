@@ -62,6 +62,10 @@
     <Compile Include="PermutationTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\SU15-GenericInterface\Set\Set.csproj">
+      <Project>{3eff7ea1-988e-49f2-bde4-55894fda9f0f}</Project>
+      <Name>Set</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SU15-Alg-Lab1-Bonus\SU15-Alg-Lab1-Bonus.csproj">
       <Project>{8f5407be-fe2b-4c12-8de5-9e750f2a5638}</Project>
       <Name>SU15-Alg-Lab1-Bonus</Name>
