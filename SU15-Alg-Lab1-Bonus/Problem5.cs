@@ -53,11 +53,6 @@ namespace SU15_Alg_Lab1_Bonus
             return set;
         }
 
-        public static IEnumerable<T> Permutate<T>(IEnumerable<T> set, Func<IEnumerable<T>, IEnumerable<T>> rules)
-        {
-            return rules(set);
-        }
-
         public static Set<Set<int>> PermutateJoin(Set<Set<int>> set)
         {
             var permutations = new Set<Set<int>>();
@@ -68,7 +63,7 @@ namespace SU15_Alg_Lab1_Bonus
                 int length = perm.Count - 2;
                 for (int i = 0; i <= length; i++)
                 {
-                    List<int> copy = perm.Copy().ToList();
+                    var copy = perm.Copy().ToList();
                     int join = int.Parse(copy[i].ToString() + copy[i + 1]);
 
                     // Insert join at pos X, delete X+1 to X+2 that were joined
@@ -76,15 +71,8 @@ namespace SU15_Alg_Lab1_Bonus
                     copy.Insert(pos, join);
                     copy.RemoveRange(pos + 1, 2);
 
-
-                    // Check if we've already generated this permutation
-                    bool exists = permutations.Any(e => perm.EqualTo(e));
-
-                    if (!exists)
-                    {
-                        var newPerm = new Set<int> {copy};
-                        permutations.Add(newPerm);
-                    }
+                    var newPerm = new Set<int> {copy};
+                    permutations.Add(newPerm);
                 }
 
             }
@@ -98,24 +86,13 @@ namespace SU15_Alg_Lab1_Bonus
 
             foreach (Set<int> perm in set)
             {
-
                 int length = perm.Count() - 1;
                 for (int i = 1; i <= length; i++)
                 {
-                    List<int> copy = perm.Copy().ToList();
-                    copy[i] = copy[i] - 2*copy[i];
-
-
-                    // Check if we've already generated this permutation
-                    bool exists = permutations.Any(e => perm.EqualTo(e));
-
-                    if (!exists)
-                    {
-                        var newPerm = new Set<int> { copy };
-                        permutations.Add(newPerm);
-                    }
+                    var copy = (Set<int>)perm.Copy();
+                    copy[i] *= -1;
+                    permutations.Add(copy);
                 }
-
             }
 
             return permutations;
