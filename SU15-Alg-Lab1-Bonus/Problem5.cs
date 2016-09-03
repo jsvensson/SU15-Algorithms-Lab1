@@ -10,6 +10,7 @@ namespace SU15_Alg_Lab1_Bonus
 
     public class Problem5
     {
+        private static int iterations;
         public static IEnumerable<IEnumerable<int>> FindPermutations()
         {
             var digits = new Set<int> {1, 2, 3, 4, 5, 6, 7, 8, 9};
@@ -60,6 +61,8 @@ namespace SU15_Alg_Lab1_Bonus
             //set.Add(sub7);
             //set.Add(sub8);
 
+            Console.WriteLine($"Total iterations: {iterations}");
+
             return set;
         }
 
@@ -81,6 +84,7 @@ namespace SU15_Alg_Lab1_Bonus
                     copy.RemoveRange(i + 1, 2);
 
                     var newPerm = new Set<int> {copy};
+                    iterations++;
                     permutations.Add(newPerm);
                 }
 
@@ -95,11 +99,12 @@ namespace SU15_Alg_Lab1_Bonus
 
             foreach (Set<int> perm in set)
             {
-                int length = perm.Count() - 1;
-                for (int i = 1; i <= length; i++)
+                int length = perm.Count();
+                for (int i = 1; i < length; i++)
                 {
                     var copy = (Set<int>)perm.Copy();
                     copy[i] *= -1;
+                    iterations++;
                     permutations.Add(copy);
                 }
             }
