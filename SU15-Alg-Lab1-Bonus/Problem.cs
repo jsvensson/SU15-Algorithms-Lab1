@@ -13,7 +13,7 @@ namespace SU15_Alg_Lab1_Bonus
             int sum = 0;
             for (int i = 0; i < numbers.Count; i++)
             {
-                sum += i;
+                sum += numbers[i];
             }
 
             return sum;
