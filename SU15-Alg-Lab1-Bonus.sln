@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SU15-Alg-Lab1-Bonus", "SU15
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTests", "UnitTests\UnitTests.csproj", "{CC4CE82E-C646-408D-9BE4-35619A96B251}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Set", "..\SU15-GenericInterface\Set\Set.csproj", "{3EFF7EA1-988E-49F2-BDE4-55894FDA9F0F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Set", "..\..\SU15-Algorithms-GenericInterface\Set\Set.csproj", "{3EFF7EA1-988E-49F2-BDE4-55894FDA9F0F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

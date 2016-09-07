@@ -11,7 +11,7 @@ namespace UnitTests
         [TestMethod]
         public void For_Sums_List()
         {
-            List<int> input = new List<int> { 1, 2, 3, 4, 5 };
+            var input = new List<int> { 1, 2, 3, 4, 5 };
             int expected = 15;
 
             int actual = Problem.SumWithFor(input);
@@ -22,7 +22,7 @@ namespace UnitTests
         [TestMethod]
         public void While_Sums_List()
         {
-            List<int> input = new List<int> { 1, 2, 3, 4, 5 };
+            var input = new List<int> { 1, 2, 3, 4, 5 };
             int expected = 15;
 
             int actual = Problem.SumWithWhile(input);
@@ -44,7 +44,7 @@ namespace UnitTests
         [TestMethod]
         public void Recursion2_Sums_List()
         {
-            List<int> input = new List<int> { 1, 2, 3, 4, 5 };
+            var input = new List<int> { 1, 2, 3, 4, 5 };
             int expected = 15;
 
             int actual = Problem.SumWithRecursion2(input);

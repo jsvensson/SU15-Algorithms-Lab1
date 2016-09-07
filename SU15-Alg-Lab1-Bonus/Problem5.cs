@@ -17,46 +17,46 @@ namespace SU15_Alg_Lab1_Bonus
             var set = new Set<Set<int>> {digits};
 
             // Slow-ass join loop
-            Set<Set<int>> join;
-            for (int i = 0; i < digits.Count - 1; i++)
-            {
-                var newSet = (Set<Set<int>>)set.Copy();
-                join = PermutateJoin(newSet);
-                set.Add(join);
-            }
+            //Set<Set<int>> join;
+            //for (int i = 0; i < digits.Count - 1; i++)
+            //{
+            //    var newSet = (Set<Set<int>>)set.Copy();
+            //    join = PermutateJoin(newSet);
+            //    set.Add(join);
+            //}
 
 
-            //Set<Set<int>> join1 = PermutateJoin(set);
-            //Set<Set<int>> join2 = PermutateJoin(join1);
-            //Set<Set<int>> join3 = PermutateJoin(join2);
-            //Set<Set<int>> join4 = PermutateJoin(join3);
-            //Set<Set<int>> join5 = PermutateJoin(join4);
+            Set<Set<int>> join1 = PermutateJoin(set);
+            Set<Set<int>> join2 = PermutateJoin(join1);
+            Set<Set<int>> join3 = PermutateJoin(join2);
+            Set<Set<int>> join4 = PermutateJoin(join3);
+            Set<Set<int>> join5 = PermutateJoin(join4);
             //Set<Set<int>> join6 = PermutateJoin(join5);
             //Set<Set<int>> join7 = PermutateJoin(join6);
             //Set<Set<int>> join8 = PermutateJoin(join7);
 
-            //set.Add(join1);
-            //set.Add(join2);
-            //set.Add(join3);
-            //set.Add(join4);
-            //set.Add(join5);
+            set.Add(join1);
+            set.Add(join2);
+            set.Add(join3);
+            set.Add(join4);
+            set.Add(join5);
             //set.Add(join6);
             //set.Add(join7);
             //set.Add(join8);
 
-            //Set<Set<int>> sub1 = PermutateSubtraction(set);
-            //Set<Set<int>> sub2 = PermutateSubtraction(sub1);
-            //Set<Set<int>> sub3 = PermutateSubtraction(sub2);
-            //Set<Set<int>> sub4 = PermutateSubtraction(sub3);
-            //Set<Set<int>> sub5 = PermutateSubtraction(sub4);
+            Set<Set<int>> sub1 = PermutateSubtraction(set);
+            Set<Set<int>> sub2 = PermutateSubtraction(sub1);
+            Set<Set<int>> sub3 = PermutateSubtraction(sub2);
+            Set<Set<int>> sub4 = PermutateSubtraction(sub3);
+            Set<Set<int>> sub5 = PermutateSubtraction(sub4);
             //Set<Set<int>> sub6 = PermutateSubtraction(sub5);
             //Set<Set<int>> sub7 = PermutateSubtraction(sub6);
             //Set<Set<int>> sub8 = PermutateSubtraction(sub7);
-            //set.Add(sub1);
-            //set.Add(sub2);
-            //set.Add(sub3);
-            //set.Add(sub4);
-            //set.Add(sub5);
+            set.Add(sub1);
+            set.Add(sub2);
+            set.Add(sub3);
+            set.Add(sub4);
+            set.Add(sub5);
             //set.Add(sub6);
             //set.Add(sub7);
             //set.Add(sub8);

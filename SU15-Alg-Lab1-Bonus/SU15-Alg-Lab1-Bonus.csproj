@@ -52,7 +52,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\SU15-GenericInterface\Set\Set.csproj">
+    <ProjectReference Include="..\..\..\SU15-Algorithms-GenericInterface\Set\Set.csproj">
       <Project>{3eff7ea1-988e-49f2-bde4-55894fda9f0f}</Project>
       <Name>Set</Name>
     </ProjectReference>

@@ -13,40 +13,18 @@ namespace UnitTests
         [TestMethod]
         public void Permutate_Joins()
         {
-            var input = new Set<int[]> {new[] {1, 2, 3, 4}};
-            IEnumerable<int>[] expected =
+            var input = new Set<Set<int>> {new Set<int> {1, 2, 3, 4}};
+            var expected = new Set<Set<int>>
             {
-                new[] {12, 3, 4},
-                new[] {1, 23, 4},
-                new[] {1, 2, 34}
+                new Set<int> {12, 3, 4},
+                new Set<int> {1, 23, 4},
+                new Set<int> {1, 2, 34}
             };
 
-            IEnumerable<int>[] actual = Problem5.PermutateJoin(input).ToArray();
+            var actual = Problem5.PermutateJoin(input);
 
-            CollectionAssert.AreEquivalent(expected, actual);
+            Assert.IsTrue(expected.EqualTo(actual));
         }
 
-        [TestMethod]
-        public void Permutate_Joins_Step2()
-        {
-            var input = new Set<int[]>
-            {
-                new[] {12, 3, 4},
-                new[] {1, 23, 4},
-                new[] {1, 2, 34}
-            };
-
-            IEnumerable<int>[] expected =
-            {
-                new[] {123, 4},
-                new[] {12, 34},
-                new[] {1, 234}
-            };
-
-            IEnumerable<int>[] actual = Problem5.PermutateJoin(input).ToArray();
-
-            CollectionAssert.AreEquivalent(expected, actual);
-
-        }
     }
 }
