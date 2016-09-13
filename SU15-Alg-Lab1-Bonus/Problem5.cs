@@ -14,7 +14,7 @@ namespace SU15_Alg_Lab1_Bonus
         public static IEnumerable<IEnumerable<int>> FindPermutations()
         {
             var digits = new Sequence {1, 2, 3, 4, 5, 6, 7, 8, 9};
-            var set = new Set<Sequence> {digits};
+            var set = new HashSet<Sequence> {digits};
 
             // Slow-ass join loop
             //Set<Sequence> join;
@@ -26,49 +26,49 @@ namespace SU15_Alg_Lab1_Bonus
             //    set.Add(join);
             //}
 
-            Set<Sequence> join1 = PermutateJoin(set);
-            Set<Sequence> join2 = PermutateJoin(join1);
-            Set<Sequence> join3 = PermutateJoin(join2);
-            Set<Sequence> join4 = PermutateJoin(join3);
-            Set<Sequence> join5 = PermutateJoin(join4);
-            //Set<Sequence> join6 = PermutateJoin(join5);
-            //Set<Sequence> join7 = PermutateJoin(join6);
-            //Set<Sequence> join8 = PermutateJoin(join7);
+            HashSet<Sequence> join1 = PermutateJoin(set);
+            HashSet<Sequence> join2 = PermutateJoin(join1);
+            HashSet<Sequence> join3 = PermutateJoin(join2);
+            HashSet<Sequence> join4 = PermutateJoin(join3);
+            HashSet<Sequence> join5 = PermutateJoin(join4);
+            HashSet<Sequence> join6 = PermutateJoin(join5);
+            HashSet<Sequence> join7 = PermutateJoin(join6);
+            HashSet<Sequence> join8 = PermutateJoin(join7);
 
-            set.Add(join1);
-            set.Add(join2);
-            set.Add(join3);
-            set.Add(join4);
-            set.Add(join5);
-            //set.Add(join6);
-            //set.Add(join7);
-            //set.Add(join8);
+            set.UnionWith(join1);
+            set.UnionWith(join2);
+            set.UnionWith(join3);
+            set.UnionWith(join4);
+            set.UnionWith(join5);
+            set.UnionWith(join6);
+            set.UnionWith(join7);
+            set.UnionWith(join8);
 
-            Set<Sequence> sub1 = PermutateSubtraction(set);
-            Set<Sequence> sub2 = PermutateSubtraction(sub1);
-            Set<Sequence> sub3 = PermutateSubtraction(sub2);
-            Set<Sequence> sub4 = PermutateSubtraction(sub3);
-            Set<Sequence> sub5 = PermutateSubtraction(sub4);
-            //Set<Sequence> sub6 = PermutateSubtraction(sub5);
-            //Set<Sequence> sub7 = PermutateSubtraction(sub6);
-            //Set<Sequence> sub8 = PermutateSubtraction(sub7);
-            set.Add(sub1);
-            set.Add(sub2);
-            set.Add(sub3);
-            set.Add(sub4);
-            set.Add(sub5);
-            //set.Add(sub6);
-            //set.Add(sub7);
-            //set.Add(sub8);
+            HashSet<Sequence> sub1 = PermutateSubtraction(set);
+            HashSet<Sequence> sub2 = PermutateSubtraction(sub1);
+            HashSet<Sequence> sub3 = PermutateSubtraction(sub2);
+            HashSet<Sequence> sub4 = PermutateSubtraction(sub3);
+            HashSet<Sequence> sub5 = PermutateSubtraction(sub4);
+            HashSet<Sequence> sub6 = PermutateSubtraction(sub5);
+            HashSet<Sequence> sub7 = PermutateSubtraction(sub6);
+            HashSet<Sequence> sub8 = PermutateSubtraction(sub7);
+            set.UnionWith(sub1);
+            set.UnionWith(sub2);
+            set.UnionWith(sub3);
+            set.UnionWith(sub4);
+            set.UnionWith(sub5);
+            set.UnionWith(sub6);
+            set.UnionWith(sub7);
+            set.UnionWith(sub8);
 
             Console.WriteLine($"Total iterations: {iterations}");
 
             return set;
         }
 
-        public static Set<Sequence> PermutateJoin(IEnumerable<Sequence> set)
+        public static HashSet<Sequence> PermutateJoin(IEnumerable<Sequence> set)
         {
-            var permutations = new Set<Sequence>();
+            var permutations = new HashSet<Sequence>();
 
             foreach (Sequence seq in set)
             {
@@ -91,9 +91,9 @@ namespace SU15_Alg_Lab1_Bonus
             return permutations;
         }
 
-        public static Set<Sequence> PermutateSubtraction(IEnumerable<Sequence> set)
+        public static HashSet<Sequence> PermutateSubtraction(IEnumerable<Sequence> set)
         {
-            var permutations = new Set<Sequence>();
+            var permutations = new HashSet<Sequence>();
 
             foreach (Sequence seq in set)
             {
