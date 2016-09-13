@@ -13,12 +13,12 @@ namespace UnitTests
         [TestMethod]
         public void Permutate_Joins()
         {
-            var input = new Set<Set<int>> {new Set<int> {1, 2, 3, 4}};
-            var expected = new Set<Set<int>>
+            var input = new Set<Sequence> {new Sequence {1, 2, 3, 4}};
+            var expected = new Set<Sequence>
             {
-                new Set<int> {12, 3, 4},
-                new Set<int> {1, 23, 4},
-                new Set<int> {1, 2, 34}
+                new Sequence {12, 3, 4},
+                new Sequence {1, 23, 4},
+                new Sequence {1, 2, 34}
             };
 
             var actual = Problem5.PermutateJoin(input);
